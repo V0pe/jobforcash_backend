@@ -153,6 +153,10 @@ To run tests, run the following command:
 - Twitter: [@de_vope_](https://twitter.com/de_vope)
 - LinkedIn: [Victor Damola](https://linkedin.com/in/victor-damola-aderibigbe-27931ab0)
 
+- GitHub [@German Cobian](@German Cobian)
+- Twitter [@GermanCobian2](https://twitter.com/GermanCobian2)
+- LinkedIn [@German Cobian](https://www.linkedin.com/in/german-cobian/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
