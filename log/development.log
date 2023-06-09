@@ -213,3 +213,202 @@ Processing by V1::UsersController#show as JSON
 Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 621)
 
 
+Started POST "/v1/laborers" for 127.0.0.1 at 2023-06-09 15:03:11 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::LaborersController#create as JSON
+  Parameters: {"laborer"=>{"name"=>"Gerard", "skill"=>"Carpenter", "country"=>"Mexico", "city"=>"Ensenada", "price"=>123.0}}
+Completed 500 Internal Server Error in 435ms (ActiveRecord: 60.3ms | Allocations: 15753)
+
+
+  
+NoMethodError (undefined method `description' for #<Laborer id: nil, name: "Gerard", skill: "Carpenter", city: "Ensenada", country: "Mexico", price: 0.123e3, created_at: nil, updated_at: nil>
+Did you mean?  decrypt):
+  
+app/controllers/v1/laborers_controller.rb:20:in `create'
+Started POST "/v1/laborers" for 127.0.0.1 at 2023-06-09 15:03:44 -0700
+Processing by V1::LaborersController#create as JSON
+  Parameters: {"laborer"=>{"name"=>"Gerard", "skill"=>"Carpenter", "description"=>"A master of woodcraft", "country"=>"Mexico", "city"=>"Ensenada", "price"=>123.0}}
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms | Allocations: 686)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'description' for Laborer.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/v1/laborers_controller.rb:18:in `create'
+  [1m[35m (94.9ms)[0m  [1m[35mCREATE DATABASE "jobforcash_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "jobforcash_backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (18.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7245288471381514575)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (73.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7245288471381514575)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/v1/laborers" for 127.0.0.1 at 2023-06-09 15:05:52 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::LaborersController#create as JSON
+  Parameters: {"laborer"=>{"name"=>"Gerard", "skill"=>"Carpenter", "description"=>"A master of woodcraft", "country"=>"Mexico", "city"=>"Ensenada", "price"=>123.0}}
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 4.8ms | Allocations: 8975)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'description' for Laborer.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/v1/laborers_controller.rb:18:in `create'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (287.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "jobforcash_backend_development"[0m
+  [1m[35m (90.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "jobforcash_backend_test"[0m
+  [1m[35m (1662.4ms)[0m  [1m[35mCREATE DATABASE "jobforcash_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (147.8ms)[0m  [1m[35mCREATE DATABASE "jobforcash_backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (88.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7245288471381514575)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230608205456)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (63.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230608205456"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLaborers (20230609165958)
+  [1m[36mTRANSACTION (39.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "laborers" ("id" bigserial primary key, "name" character varying, "skill" character varying, "city" character varying, "country" character varying, "price" decimal, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230609165958"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReservations (20230609170622)
+  [1m[36mTRANSACTION (40.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "start_date" date, "number_days" integer, "cost" decimal, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230609170622"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddReferencesToReservations (20230609170758)
+  [1m[36mTRANSACTION (30.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (37.2ms)[0m  [1m[35mALTER TABLE "reservations" ADD "user_id" bigint[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE INDEX "index_reservations_on_user_id" ON "reservations" ("user_id")[0m
+  [1m[35m (24.7ms)[0m  [1m[35mALTER TABLE "reservations" ADD CONSTRAINT "fk_rails_48a92fce51"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "reservations" ADD "laborer_id" bigint[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_reservations_on_laborer_id" ON "reservations" ("laborer_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "reservations" ADD CONSTRAINT "fk_rails_1b6f08ac05"
+FOREIGN KEY ("laborer_id")
+  REFERENCES "laborers" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230609170758"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-06-09 22:06:32.813470"], ["updated_at", "2023-06-09 22:06:32.813470"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7245288471381514575)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/v1/laborers" for 127.0.0.1 at 2023-06-09 15:06:47 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::LaborersController#create as JSON
+  Parameters: {"laborer"=>{"name"=>"Gerard", "skill"=>"Carpenter", "description"=>"A master of woodcraft", "country"=>"Mexico", "city"=>"Ensenada", "price"=>123.0}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/v1/laborers_controller.rb:20:in `create'
+  [1m[36mLaborer Create (42.0ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Gerard"], ["skill", "Carpenter"], ["city", "Ensenada"], ["country", "Mexico"], ["price", "123.0"], ["description", "A master of woodcraft"], ["created_at", "2023-06-09 22:06:48.458674"], ["updated_at", "2023-06-09 22:06:48.458674"]]
+  ↳ app/controllers/v1/laborers_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/v1/laborers_controller.rb:20:in `create'
+Completed 200 OK in 139ms (Views: 20.3ms | ActiveRecord: 49.4ms | Allocations: 12079)
+
+
+Started POST "/v1/laborers" for 127.0.0.1 at 2023-06-09 15:07:08 -0700
+Processing by V1::LaborersController#create as JSON
+  Parameters: {"laborer"=>{"name"=>"Amy", "skill"=>"Carpenter", "description"=>"A master of woodcraft", "country"=>"Mexico", "city"=>"Ensenada", "price"=>123.0}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/v1/laborers_controller.rb:20:in `create'
+  [1m[36mLaborer Create (0.3ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Amy"], ["skill", "Carpenter"], ["city", "Ensenada"], ["country", "Mexico"], ["price", "123.0"], ["description", "A master of woodcraft"], ["created_at", "2023-06-09 22:07:08.284830"], ["updated_at", "2023-06-09 22:07:08.284830"]]
+  ↳ app/controllers/v1/laborers_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (91.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/v1/laborers_controller.rb:20:in `create'
+Completed 200 OK in 99ms (Views: 0.2ms | ActiveRecord: 92.1ms | Allocations: 2146)
+
+
+Started POST "/v1/laborers" for 127.0.0.1 at 2023-06-09 15:07:17 -0700
+Processing by V1::LaborersController#create as JSON
+  Parameters: {"laborer"=>{"name"=>"Juan", "skill"=>"Carpenter", "description"=>"A master of woodcraft", "country"=>"Mexico", "city"=>"Ensenada", "price"=>123.0}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/v1/laborers_controller.rb:20:in `create'
+  [1m[36mLaborer Create (3.7ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Juan"], ["skill", "Carpenter"], ["city", "Ensenada"], ["country", "Mexico"], ["price", "123.0"], ["description", "A master of woodcraft"], ["created_at", "2023-06-09 22:07:17.619431"], ["updated_at", "2023-06-09 22:07:17.619431"]]
+  ↳ app/controllers/v1/laborers_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/v1/laborers_controller.rb:20:in `create'
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 4.7ms | Allocations: 2110)
+
+
+Started GET "/v1/laborers" for 127.0.0.1 at 2023-06-09 15:07:23 -0700
+Processing by V1::LaborersController#index as JSON
+  Parameters: {"laborer"=>{"name"=>"Juan", "skill"=>"Carpenter", "description"=>"A master of woodcraft", "country"=>"Mexico", "city"=>"Ensenada", "price"=>123.0}}
+  [1m[36mLaborer Load (0.5ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers"[0m
+  ↳ app/controllers/v1/laborers_controller.rb:4:in `index'
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1421)
+
+
+Started GET "/v1/laborers/3" for 127.0.0.1 at 2023-06-09 15:07:56 -0700
+Processing by V1::LaborersController#show as JSON
+  Parameters: {"laborer"=>{"name"=>"Juan", "skill"=>"Carpenter", "description"=>"A master of woodcraft", "country"=>"Mexico", "city"=>"Ensenada", "price"=>123.0}, "id"=>"3"}
+  [1m[36mLaborer Load (0.4ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/laborers_controller.rb:8:in `show'
+Completed 200 OK in 32ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 2486)
+
+
+Started DELETE "/v1/laborers/3" for 127.0.0.1 at 2023-06-09 15:08:04 -0700
+Processing by V1::LaborersController#destroy as JSON
+  Parameters: {"laborer"=>{"name"=>"Juan", "skill"=>"Carpenter", "description"=>"A master of woodcraft", "country"=>"Mexico", "city"=>"Ensenada", "price"=>123.0}, "id"=>"3"}
+  [1m[36mLaborer Load (1.5ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/laborers_controller.rb:28:in `destroy'
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 1.5ms | Allocations: 9312)
+
+
+  
+NameError (Rails couldn't find a valid model for Reservation association. Please provide the :class_name option on the association declaration. If :class_name is already provided, make sure it's an ActiveRecord::Base subclass.
+
+          raise NameError, msg
+          ^^^^^):
+  
+app/controllers/v1/laborers_controller.rb:33:in `destroy'
+Started GET "/v1/users" for 127.0.0.1 at 2023-06-09 15:10:13 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/v1/users"):
+  
+Started GET "/v1/laborers" for 127.0.0.1 at 2023-06-09 15:10:54 -0700
+Processing by V1::LaborersController#index as JSON
+  Parameters: {"laborer"=>{"name"=>"Juan", "skill"=>"Carpenter", "description"=>"A master of woodcraft", "country"=>"Mexico", "city"=>"Ensenada", "price"=>123.0}}
+  [1m[36mLaborer Load (0.2ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers"[0m
+  ↳ app/controllers/v1/laborers_controller.rb:4:in `index'
+Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 12.9ms | Allocations: 4001)
+
+
+Started DELETE "/v1/laborers/3" for 127.0.0.1 at 2023-06-09 15:11:12 -0700
+Processing by V1::LaborersController#destroy as JSON
+  Parameters: {"laborer"=>{"name"=>"Juan", "skill"=>"Carpenter", "description"=>"A master of woodcraft", "country"=>"Mexico", "city"=>"Ensenada", "price"=>123.0}, "id"=>"3"}
+  [1m[36mLaborer Load (0.3ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/laborers_controller.rb:28:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/v1/laborers_controller.rb:33:in `destroy'
+  [1m[36mLaborer Destroy (1.0ms)[0m  [1m[31mDELETE FROM "laborers" WHERE "laborers"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/v1/laborers_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/v1/laborers_controller.rb:33:in `destroy'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 2.0ms | Allocations: 2335)
+
+
+Started GET "/v1/laborers" for 127.0.0.1 at 2023-06-09 15:11:22 -0700
+Processing by V1::LaborersController#index as JSON
+  Parameters: {"laborer"=>{"name"=>"Juan", "skill"=>"Carpenter", "description"=>"A master of woodcraft", "country"=>"Mexico", "city"=>"Ensenada", "price"=>123.0}}
+  [1m[36mLaborer Load (0.2ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers"[0m
+  ↳ app/controllers/v1/laborers_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 886)
+
+
