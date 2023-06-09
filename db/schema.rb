@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_09_170758) do
     t.string "city"
     t.string "country"
     t.decimal "price"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
