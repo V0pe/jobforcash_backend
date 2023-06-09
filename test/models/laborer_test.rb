@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 class LaborerTest < ActiveSupport::TestCase
   # test "the truth" do
