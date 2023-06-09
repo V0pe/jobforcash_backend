@@ -96,3 +96,120 @@ FOREIGN KEY ("laborer_id")
   [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7245288471381514575)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Vic"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "Vic"], ["created_at", "2023-06-09 21:18:38.346448"], ["updated_at", "2023-06-09 21:18:38.346448"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Mic"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "Mic"], ["created_at", "2023-06-09 21:18:59.087079"], ["updated_at", "2023-06-09 21:18:59.087079"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2023-06-09 15:33:48 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/velli/.asdf/installs/ruby/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/velli/.asdf/installs/ruby/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.9ms | Allocations: 637)
+Completed 200 OK in 27ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 6856)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2023-06-09 15:35:05 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/v1/users"):
+  
+Started GET "/v1/user" for 127.0.0.1 at 2023-06-09 15:35:17 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/v1/user"):
+  
+Started GET "/v1/users" for 127.0.0.1 at 2023-06-09 15:36:05 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/v1/users"):
+  
+Started GET "/v1/users" for 127.0.0.1 at 2023-06-09 15:37:02 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/v1/users"):
+  
+Started POST "/v1/users?username=Vic" for 127.0.0.1 at 2023-06-09 15:37:32 -0600
+Processing by V1::UsersController#create as JSON
+  Parameters: {"username"=>"Vic"}
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.0ms | Allocations: 2081)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/v1/users_controller.rb:26:in `user_params'
+app/controllers/v1/users_controller.rb:3:in `create'
+Started POST "/v1/users" for 127.0.0.1 at 2023-06-09 15:38:01 -0600
+Processing by V1::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"Henry"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/v1/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Henry"], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:5:in `create'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "Henry"], ["created_at", "2023-06-09 21:38:01.384969"], ["updated_at", "2023-06-09 21:38:01.384969"]]
+  ↳ app/controllers/v1/users_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/v1/users_controller.rb:5:in `create'
+Completed 200 OK in 38ms (Views: 0.2ms | ActiveRecord: 12.4ms | Allocations: 8075)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2023-06-09 15:39:09 -0600
+Processing by V1::UsersController#index as JSON
+  Parameters: {"user"=>{"username"=>"Henry"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:3:in `index'
+Completed 200 OK in 34ms (Views: 0.1ms | ActiveRecord: 4.4ms | Allocations: 2637)
+
+
+Started DELETE "/v1/user/3" for 127.0.0.1 at 2023-06-09 15:39:25 -0600
+  
+ActionController::RoutingError (No route matches [DELETE] "/v1/user/3"):
+  
+Started DELETE "/v1/users/3" for 127.0.0.1 at 2023-06-09 15:39:33 -0600
+Processing by V1::UsersController#destroy as JSON
+  Parameters: {"user"=>{"username"=>"Henry"}, "id"=>"3"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:17:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/v1/users_controller.rb:22:in `destroy'
+  [1m[36mReservation Load (0.9ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/v1/users_controller.rb:22:in `destroy'
+  [1m[36mUser Destroy (4.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/v1/users_controller.rb:22:in `destroy'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/v1/users_controller.rb:22:in `destroy'
+Completed 200 OK in 53ms (Views: 0.3ms | ActiveRecord: 12.2ms | Allocations: 8505)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2023-06-09 15:39:42 -0600
+Processing by V1::UsersController#index as JSON
+  Parameters: {"user"=>{"username"=>"Henry"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/v1/users_controller.rb:3:in `index'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 813)
+
+
+Started GET "/v1/user" for 127.0.0.1 at 2023-06-09 15:44:11 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/v1/user"):
+  
+Started GET "/v1/users" for 127.0.0.1 at 2023-06-09 15:45:45 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/v1/users"):
+  
+Started GET "/v1/users/1" for 127.0.0.1 at 2023-06-09 15:45:53 -0600
+Processing by V1::UsersController#show as JSON
+  Parameters: {"user"=>{"username"=>"Henry"}, "id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:3:in `show'
+Completed 200 OK in 17ms (Views: 0.6ms | ActiveRecord: 7.0ms | Allocations: 2599)
+
+
+Started GET "/v1/users/2" for 127.0.0.1 at 2023-06-09 15:45:57 -0600
+Processing by V1::UsersController#show as JSON
+  Parameters: {"user"=>{"username"=>"Henry"}, "id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:3:in `show'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 621)
+
+
