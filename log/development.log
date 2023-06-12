@@ -1121,3 +1121,114 @@ ArgumentError (Missing host to link to! Please provide the :host parameter, set 
   
 app/models/laborer.rb:13:in `image_url'
 app/controllers/v1/laborers_controller.rb:5:in `index'
+Started GET "/v1/laborers" for 127.0.0.1 at 2023-06-12 10:29:27 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::LaborersController#index as JSON
+  [1m[36mLaborer Load (1.3ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers"[0m
+  ↳ app/controllers/v1/laborers_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Attachment Load (37.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+Completed 500 Internal Server Error in 507ms (ActiveRecord: 53.1ms | Allocations: 32220)
+
+
+  
+ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+  
+app/models/laborer.rb:13:in `image_url'
+app/controllers/v1/laborers_controller.rb:5:in `index'
+Started GET "/v1/reservations" for 127.0.0.1 at 2023-06-12 10:33:59 -0700
+Processing by V1::ReservationsController#index as JSON
+  [1m[36mReservation Load (1.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  ↳ app/controllers/v1/reservations_controller.rb:3:in `index'
+Completed 200 OK in 81ms (Views: 1.2ms | ActiveRecord: 6.2ms | Allocations: 6945)
+
+
+Started GET "/v1/reservations" for 127.0.0.1 at 2023-06-12 10:36:34 -0700
+Processing by V1::ReservationsController#index as JSON
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  ↳ app/controllers/v1/reservations_controller.rb:3:in `index'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 1062)
+
+
+Started GET "/v1/laborers" for 127.0.0.1 at 2023-06-12 10:36:44 -0700
+Processing by V1::LaborersController#index as JSON
+  [1m[36mLaborer Load (0.3ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers"[0m
+  ↳ app/controllers/v1/laborers_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.4ms | Allocations: 2681)
+
+
+  
+ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+  
+app/models/laborer.rb:13:in `image_url'
+app/controllers/v1/laborers_controller.rb:5:in `index'
+Started GET "/v1/laborers" for 127.0.0.1 at 2023-06-12 10:42:23 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::LaborersController#index as JSON
+  [1m[36mLaborer Load (0.7ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers"[0m
+  ↳ app/controllers/v1/laborers_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Attachment Load (15.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+Completed 500 Internal Server Error in 354ms (ActiveRecord: 27.4ms | Allocations: 37929)
+
+
+  
+NoMethodError (undefined method `url_for' for #<Laborer id: 1, name: "Raul", skill: "carpenter", city: "Tijuana", country: "Mexico", price: 0.11e3, description: "Simply the best", created_at: "2023-06-12 17:02:23.696640000 +0000", updated_at: "2023-06-12 17:02:24.319954000 +0000">):
+  
+app/models/laborer.rb:14:in `image_url'
+app/controllers/v1/laborers_controller.rb:5:in `index'
+Started GET "/v1/laborers" for 127.0.0.1 at 2023-06-12 10:42:50 -0700
+Processing by V1::LaborersController#index as JSON
+  [1m[36mLaborer Load (0.3ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers"[0m
+  ↳ app/controllers/v1/laborers_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Attachment Load (1.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+Completed 200 OK in 346ms (Views: 13.3ms | ActiveRecord: 18.6ms | Allocations: 34937)
+
+

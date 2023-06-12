@@ -39,6 +39,6 @@ class V1::LaborersController < ApplicationController
   private
 
   def laborer_params
-    params.require(:laborer).permit(:name, :skill, :description, :country, :city, :price, :image)
+    params.permit(:name, :skill, :description, :country, :city, :price, :image)
   end
 end
