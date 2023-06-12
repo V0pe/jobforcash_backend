@@ -11,5 +11,6 @@ class Laborer < ApplicationRecord
 
   def image_url
     Rails.application.routes.url_helpers.url_for(image) if image.attached?
+    url_for(image, host: 'localhost', port: 3000)
   end
 end

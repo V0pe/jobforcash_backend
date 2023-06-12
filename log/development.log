@@ -486,3 +486,638 @@ FOREIGN KEY ("blob_id")
   [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7245288471381514575)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (25.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7245288471381514575)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActiveStorageTables (20230612154933)
+  [1m[36mTRANSACTION (92.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (442.4ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (16.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (56.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (226.6ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (41.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230612154933"]]
+  [1m[36mTRANSACTION (41.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (20.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7245288471381514575)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (59.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "GlumpPunk09"], ["LIMIT", 1]]
+  [1m[36mUser Create (13.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "GlumpPunk09"], ["created_at", "2023-06-12 16:32:46.560060"], ["updated_at", "2023-06-12 16:32:46.560060"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "BillyBoy10"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "BillyBoy10"], ["created_at", "2023-06-12 16:32:46.580987"], ["updated_at", "2023-06-12 16:32:46.580987"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLaborer Create (0.6ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Raul"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "110.0"], ["description", "Simply the best"], ["created_at", "2023-06-12 16:32:46.878604"], ["updated_at", "2023-06-12 16:32:46.878604"]]
+  [1m[36mTRANSACTION (81.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (2.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "j1q6d4h4zxumthfej43fj4ugiadu"], ["filename", "carpenter.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 30589], ["checksum", "N6bWHeqkCgDaToDhbRHAXg=="], ["created_at", "2023-06-12 16:32:48.041768"]]
+  [1m[36mActiveStorage::Attachment Create (101.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Laborer"], ["record_id", 4], ["blob_id", 1], ["created_at", "2023-06-12 16:32:48.075030"]]
+  [1m[36mLaborer Update (2.2ms)[0m  [1m[33mUPDATE "laborers" SET "updated_at" = $1 WHERE "laborers"."id" = $2[0m  [["updated_at", "2023-06-12 16:32:48.179248"], ["id", 4]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (0.9ms) [0m[32mUploaded file to key: j1q6d4h4zxumthfej43fj4ugiadu (checksum: N6bWHeqkCgDaToDhbRHAXg==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: a207fa48-157b-43cb-bf7d-3c2bb50c661a) to Async(default) with arguments: #<GlobalID:0x0000000109621628 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/1>>
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLaborer Create (1.4ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Gubber"], ["skill", "electrician"], ["city", "San Diego"], ["country", "USA"], ["price", "90.0"], ["description", "Simply the best"], ["created_at", "2023-06-12 16:32:48.226190"], ["updated_at", "2023-06-12 16:32:48.226190"]]
+  [1m[36mTRANSACTION (42.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "8tptyqm2w5ecsn9bpt5jnocbkw1z"], ["filename", "electrician.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 96545], ["checksum", "H/GYjiAfRJuiKdHhcmc8WA=="], ["created_at", "2023-06-12 16:32:48.313451"]]
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Laborer"], ["record_id", 5], ["blob_id", 2], ["created_at", "2023-06-12 16:32:48.315567"]]
+  [1m[36mLaborer Update (0.6ms)[0m  [1m[33mUPDATE "laborers" SET "updated_at" = $1 WHERE "laborers"."id" = $2[0m  [["updated_at", "2023-06-12 16:32:48.318199"], ["id", 5]]
+  [1m[36mTRANSACTION (8.9ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (1.3ms) [0m[32mUploaded file to key: 8tptyqm2w5ecsn9bpt5jnocbkw1z (checksum: H/GYjiAfRJuiKdHhcmc8WA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: a6840750-b6c4-45e9-b220-d8ea57baa8c0) to Async(default) with arguments: #<GlobalID:0x00000001097c0718 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/2>>
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLaborer Create (0.3ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Honey"], ["skill", "gardener"], ["city", "Lyon"], ["country", "France"], ["price", "80.0"], ["description", "Simply the best"], ["created_at", "2023-06-12 16:32:48.333694"], ["updated_at", "2023-06-12 16:32:48.333694"]]
+  [1m[36mTRANSACTION (21.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "6g5quyb15l5uafobcj3lx4mfnc6f"], ["filename", "gardener.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 257803], ["checksum", "1ShXJxfamkqj1RiI7Rm+bw=="], ["created_at", "2023-06-12 16:32:48.370484"]]
+  [1m[36mActiveStorage::Attachment Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Laborer"], ["record_id", 6], ["blob_id", 3], ["created_at", "2023-06-12 16:32:48.373078"]]
+  [1m[36mLaborer Update (0.4ms)[0m  [1m[33mUPDATE "laborers" SET "updated_at" = $1 WHERE "laborers"."id" = $2[0m  [["updated_at", "2023-06-12 16:32:48.375100"], ["id", 6]]
+  [1m[36mTRANSACTION (85.0ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (2.4ms) [0m[32mUploaded file to key: 6g5quyb15l5uafobcj3lx4mfnc6f (checksum: 1ShXJxfamkqj1RiI7Rm+bw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: c96e12fe-1374-4571-88fa-58260f66c124) to Async(default) with arguments: #<GlobalID:0x0000000109972ac0 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/3>>
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLaborer Create (0.4ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Doofus"], ["skill", "mason"], ["city", "Cordoba"], ["country", "Argentina"], ["price", "70.0"], ["description", "Simply the best"], ["created_at", "2023-06-12 16:32:48.466969"], ["updated_at", "2023-06-12 16:32:48.466969"]]
+  [1m[36mTRANSACTION (31.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "zoob8avahfg164njjq1lz7r9hzur"], ["filename", "mason.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 160202], ["checksum", "zpF/ChDqtUBa3wznvIhsoA=="], ["created_at", "2023-06-12 16:32:48.513349"]]
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Laborer"], ["record_id", 7], ["blob_id", 4], ["created_at", "2023-06-12 16:32:48.515644"]]
+  [1m[36mLaborer Update (0.7ms)[0m  [1m[33mUPDATE "laborers" SET "updated_at" = $1 WHERE "laborers"."id" = $2[0m  [["updated_at", "2023-06-12 16:32:48.518114"], ["id", 7]]
+  [1m[36mTRANSACTION (40.2ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (2.2ms) [0m[32mUploaded file to key: zoob8avahfg164njjq1lz7r9hzur (checksum: zpF/ChDqtUBa3wznvIhsoA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: c2d91e66-c073-423e-b820-0213e6ada555) to Async(default) with arguments: #<GlobalID:0x0000000109b5b1c0 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/4>>
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLaborer Create (2.7ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Gubber"], ["skill", "plumber"], ["city", "Valparaiso"], ["country", "Chile"], ["price", "95.0"], ["description", "Simply the best"], ["created_at", "2023-06-12 16:32:48.568390"], ["updated_at", "2023-06-12 16:32:48.568390"]]
+  [1m[36mTRANSACTION (15.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "qugtdftohf9s4ugwcnzxecg07rni"], ["filename", "plumber.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 58542], ["checksum", "9E5coiXvYIf+NSL4csHwbQ=="], ["created_at", "2023-06-12 16:32:48.644211"]]
+  [1m[36mActiveStorage::Attachment Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Laborer"], ["record_id", 8], ["blob_id", 5], ["created_at", "2023-06-12 16:32:48.647136"]]
+  [1m[36mLaborer Update (0.4ms)[0m  [1m[33mUPDATE "laborers" SET "updated_at" = $1 WHERE "laborers"."id" = $2[0m  [["updated_at", "2023-06-12 16:32:48.649579"], ["id", 8]]
+  [1m[36mTRANSACTION (39.9ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (1.2ms) [0m[32mUploaded file to key: qugtdftohf9s4ugwcnzxecg07rni (checksum: 9E5coiXvYIf+NSL4csHwbQ==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 811bba7b-71d5-4984-a464-5502b1024cfc) to Async(default) with arguments: #<GlobalID:0x00000001087b4770 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/5>>
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.4ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Create (1.4ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2022-08-07"], ["number_days", 7], ["cost", nil], ["created_at", "2023-06-12 16:32:48.820710"], ["updated_at", "2023-06-12 16:32:48.820710"], ["user_id", 1], ["laborer_id", 1]]
+  [1m[36mTRANSACTION (22.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.3ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Create (0.5ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2022-09-07"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-12 16:32:48.853266"], ["updated_at", "2023-06-12 16:32:48.853266"], ["user_id", 2], ["laborer_id", 2]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mLaborer Load (0.7ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers"[0m
+Started GET "/v1/laborers" for 127.0.0.1 at 2023-06-12 09:35:45 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (5.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/doracobian/CodingProjects/Projects-React-Rails/jobforcash_backend/app/controllers/v1/laborers_controller.rb:3: syntax error, unexpected ':', expecting `end'
+    @laborer: Laborer.all
+            ^
+):
+  
+app/controllers/v1/laborers_controller.rb:3: syntax error, unexpected ':', expecting `end'
+app/controllers/v1/laborers_controller.rb:3: syntax error, unexpected ':', expecting `end'
+Started GET "/v1/laborers" for 127.0.0.1 at 2023-06-12 09:40:28 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::LaborersController#index as JSON
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 0.0ms | Allocations: 5908)
+
+
+  
+NameError (uninitialized constant LaborerSerializer::JSONAPI
+
+  include JSONAPI::Serializer
+          ^^^^^^^):
+  
+app/serializers/laborer_serializer.rb:2:in `<class:LaborerSerializer>'
+app/serializers/laborer_serializer.rb:1:in `<main>'
+app/controllers/v1/laborers_controller.rb:5:in `index'
+Started GET "/v1/laborers" for 127.0.0.1 at 2023-06-12 09:41:47 -0700
+Processing by V1::LaborersController#index as JSON
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.0ms | Allocations: 2705)
+
+
+  
+NameError (uninitialized constant LaborerSerializer::JSONAPI
+
+  include JSONAPI::Serializer
+          ^^^^^^^):
+  
+app/serializers/laborer_serializer.rb:2:in `<class:LaborerSerializer>'
+app/serializers/laborer_serializer.rb:1:in `<main>'
+app/controllers/v1/laborers_controller.rb:5:in `index'
+Started GET "/v1/laborers" for 127.0.0.1 at 2023-06-12 09:48:41 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::LaborersController#index as JSON
+  [1m[36mLaborer Load (2.0ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers"[0m
+  ↳ app/controllers/v1/laborers_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Attachment Load (14.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+Completed 500 Internal Server Error in 393ms (ActiveRecord: 33.8ms | Allocations: 34008)
+
+
+  
+ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+  
+app/models/laborer.rb:13:in `image_url'
+app/controllers/v1/laborers_controller.rb:5:in `index'
+Started GET "/v1/laborers" for 127.0.0.1 at 2023-06-12 09:53:56 -0700
+Processing by V1::LaborersController#index as JSON
+  [1m[36mLaborer Load (0.4ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers"[0m
+  ↳ app/controllers/v1/laborers_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 3.4ms | Allocations: 4421)
+
+
+  
+ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+  
+app/models/laborer.rb:13:in `image_url'
+app/controllers/v1/laborers_controller.rb:5:in `index'
+Started GET "/v1/laborers" for 127.0.0.1 at 2023-06-12 09:55:54 -0700
+Processing by V1::LaborersController#index as JSON
+  [1m[36mLaborer Load (0.3ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers"[0m
+  ↳ app/controllers/v1/laborers_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+Completed 500 Internal Server Error in 328ms (ActiveRecord: 9.3ms | Allocations: 14943)
+
+
+  
+NoMethodError (undefined method `url_for' for #<Laborer id: 1, name: "Gerard", skill: "Carpenter", city: "Ensenada", country: "Mexico", price: 0.123e3, description: "A master of woodcraft", created_at: "2023-06-09 22:06:48.458674000 +0000", updated_at: "2023-06-09 22:06:48.458674000 +0000">):
+  
+app/models/laborer.rb:14:in `image_url'
+app/controllers/v1/laborers_controller.rb:5:in `index'
+  [1m[36mActiveRecord::SchemaMigration Pluck (30.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (47.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1222.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "jobforcash_backend_development"[0m
+  [1m[35m (87.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "jobforcash_backend_test"[0m
+  [1m[35m (10902.7ms)[0m  [1m[35mCREATE DATABASE "jobforcash_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (3804.9ms)[0m  [1m[35mCREATE DATABASE "jobforcash_backend_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (206.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (98.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (3439.6ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (45.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "laborers" CASCADE[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE "laborers" ("id" bigserial primary key, "name" character varying, "skill" character varying, "city" character varying, "country" character varying, "price" decimal, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "reservations" CASCADE[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "start_date" date, "number_days" integer, "cost" decimal, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" bigint, "laborer_id" bigint)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE INDEX "index_reservations_on_laborer_id" ON "reservations" ("laborer_id")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_reservations_on_user_id" ON "reservations" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (19.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (732.4ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "reservations" ADD CONSTRAINT "fk_rails_1b6f08ac05"
+FOREIGN KEY ("laborer_id")
+  REFERENCES "laborers" ("id")
+[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "reservations" ADD CONSTRAINT "fk_rails_48a92fce51"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (69.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230612154933)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230608205456),
+(20230609165958),
+(20230609170622),
+(20230609170758);
+
+[0m
+  [1m[35m (163.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (191.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-06-12 17:02:15.794404"], ["updated_at", "2023-06-12 17:02:15.794404"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "e83ab06e0b917d60da9aef9a193139318a2a2549"], ["created_at", "2023-06-12 17:02:16.007343"], ["updated_at", "2023-06-12 17:02:16.007343"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (90.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (53.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (2718.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "laborers" CASCADE[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE "laborers" ("id" bigserial primary key, "name" character varying, "skill" character varying, "city" character varying, "country" character varying, "price" decimal, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "reservations" CASCADE[0m
+  [1m[35m (38.6ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "start_date" date, "number_days" integer, "cost" decimal, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" bigint, "laborer_id" bigint)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_reservations_on_laborer_id" ON "reservations" ("laborer_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_reservations_on_user_id" ON "reservations" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (61.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (153.1ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "reservations" ADD CONSTRAINT "fk_rails_1b6f08ac05"
+FOREIGN KEY ("laborer_id")
+  REFERENCES "laborers" ("id")
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "reservations" ADD CONSTRAINT "fk_rails_48a92fce51"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (127.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (13.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230612154933)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230608205456),
+(20230609165958),
+(20230609170622),
+(20230609170758);
+
+[0m
+  [1m[35m (257.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (35.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-06-12 17:02:22.982344"], ["updated_at", "2023-06-12 17:02:22.982344"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2023-06-12 17:02:23.024078"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "e83ab06e0b917d60da9aef9a193139318a2a2549"], ["created_at", "2023-06-12 17:02:23.031303"], ["updated_at", "2023-06-12 17:02:23.031303"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (14.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "GlumpPunk09"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "GlumpPunk09"], ["created_at", "2023-06-12 17:02:23.581380"], ["updated_at", "2023-06-12 17:02:23.581380"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "BillyBoy10"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "BillyBoy10"], ["created_at", "2023-06-12 17:02:23.588225"], ["updated_at", "2023-06-12 17:02:23.588225"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLaborer Create (0.7ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Raul"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "110.0"], ["description", "Simply the best"], ["created_at", "2023-06-12 17:02:23.696640"], ["updated_at", "2023-06-12 17:02:23.696640"]]
+  [1m[36mTRANSACTION (35.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "ux2uawglnpv96afltk9a299tad63"], ["filename", "carpenter.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 30589], ["checksum", "N6bWHeqkCgDaToDhbRHAXg=="], ["created_at", "2023-06-12 17:02:24.312556"]]
+  [1m[36mActiveStorage::Attachment Create (1.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Laborer"], ["record_id", 1], ["blob_id", 1], ["created_at", "2023-06-12 17:02:24.316458"]]
+  [1m[36mLaborer Update (0.5ms)[0m  [1m[33mUPDATE "laborers" SET "updated_at" = $1 WHERE "laborers"."id" = $2[0m  [["updated_at", "2023-06-12 17:02:24.319954"], ["id", 1]]
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (186.9ms) [0m[32mUploaded file to key: ux2uawglnpv96afltk9a299tad63 (checksum: N6bWHeqkCgDaToDhbRHAXg==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: e450eb61-6bd4-40d2-85a3-0c0d0be41e6e) to Async(default) with arguments: #<GlobalID:0x000000011581aba8 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/1>>
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLaborer Create (0.6ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Gubber"], ["skill", "electrician"], ["city", "San Diego"], ["country", "USA"], ["price", "90.0"], ["description", "Simply the best"], ["created_at", "2023-06-12 17:02:24.537940"], ["updated_at", "2023-06-12 17:02:24.537940"]]
+  [1m[36mTRANSACTION (41.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e450eb61-6bd4-40d2-85a3-0c0d0be41e6e]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e450eb61-6bd4-40d2-85a3-0c0d0be41e6e] Performing ActiveStorage::AnalyzeJob (Job ID: e450eb61-6bd4-40d2-85a3-0c0d0be41e6e) from Async(default) enqueued at 2023-06-12T17:02:24Z with arguments: #<GlobalID:0x00000001159e7f58 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/1>>
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "2axjskzgoie7lmks9xzepp3l41q0"], ["filename", "electrician.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 96545], ["checksum", "H/GYjiAfRJuiKdHhcmc8WA=="], ["created_at", "2023-06-12 17:02:24.876760"]]
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Laborer"], ["record_id", 2], ["blob_id", 2], ["created_at", "2023-06-12 17:02:24.879680"]]
+  [1m[36mLaborer Update (0.3ms)[0m  [1m[33mUPDATE "laborers" SET "updated_at" = $1 WHERE "laborers"."id" = $2[0m  [["updated_at", "2023-06-12 17:02:24.882215"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e450eb61-6bd4-40d2-85a3-0c0d0be41e6e] Skipping image analysis because the ruby-vips gem isn't installed
+  [1m[36mTRANSACTION (2386.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e450eb61-6bd4-40d2-85a3-0c0d0be41e6e]   [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e450eb61-6bd4-40d2-85a3-0c0d0be41e6e]   [1m[36mActiveStorage::Blob Update (0.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[36m  Disk Storage (5.1ms) [0m[32mUploaded file to key: 2axjskzgoie7lmks9xzepp3l41q0 (checksum: H/GYjiAfRJuiKdHhcmc8WA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: cdf07d5a-b226-419a-83fd-7fdc4285021f) to Async(default) with arguments: #<GlobalID:0x0000000115b6fc40 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/2>>
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLaborer Create (0.5ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Honey"], ["skill", "gardener"], ["city", "Lyon"], ["country", "France"], ["price", "80.0"], ["description", "Simply the best"], ["created_at", "2023-06-12 17:02:27.303286"], ["updated_at", "2023-06-12 17:02:27.303286"]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cdf07d5a-b226-419a-83fd-7fdc4285021f]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cdf07d5a-b226-419a-83fd-7fdc4285021f] Performing ActiveStorage::AnalyzeJob (Job ID: cdf07d5a-b226-419a-83fd-7fdc4285021f) from Async(default) enqueued at 2023-06-12T17:02:27Z with arguments: #<GlobalID:0x0000000115c9d4c8 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cdf07d5a-b226-419a-83fd-7fdc4285021f] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cdf07d5a-b226-419a-83fd-7fdc4285021f]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cdf07d5a-b226-419a-83fd-7fdc4285021f]   [1m[36mActiveStorage::Blob Update (0.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e450eb61-6bd4-40d2-85a3-0c0d0be41e6e]   [1m[36mTRANSACTION (53.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e450eb61-6bd4-40d2-85a3-0c0d0be41e6e] Performed ActiveStorage::AnalyzeJob (Job ID: e450eb61-6bd4-40d2-85a3-0c0d0be41e6e) from Async(default) in 2809.67ms
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cdf07d5a-b226-419a-83fd-7fdc4285021f]   [1m[36mTRANSACTION (24.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cdf07d5a-b226-419a-83fd-7fdc4285021f] Performed ActiveStorage::AnalyzeJob (Job ID: cdf07d5a-b226-419a-83fd-7fdc4285021f) from Async(default) in 47.14ms
+  [1m[36mTRANSACTION (48.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "fmj0yjmkqkzhthooq4ygqfjy1you"], ["filename", "gardener.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 257803], ["checksum", "1ShXJxfamkqj1RiI7Rm+bw=="], ["created_at", "2023-06-12 17:02:27.401330"]]
+  [1m[36mActiveStorage::Attachment Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Laborer"], ["record_id", 3], ["blob_id", 3], ["created_at", "2023-06-12 17:02:27.403491"]]
+  [1m[36mLaborer Update (0.3ms)[0m  [1m[33mUPDATE "laborers" SET "updated_at" = $1 WHERE "laborers"."id" = $2[0m  [["updated_at", "2023-06-12 17:02:27.405648"], ["id", 3]]
+  [1m[36mTRANSACTION (111.7ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (10.3ms) [0m[32mUploaded file to key: fmj0yjmkqkzhthooq4ygqfjy1you (checksum: 1ShXJxfamkqj1RiI7Rm+bw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: a1332686-ec31-48bf-b390-cde29964fa38) to Async(default) with arguments: #<GlobalID:0x0000000115e7ee68 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/3>>
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLaborer Create (0.6ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Doofus"], ["skill", "mason"], ["city", "Cordoba"], ["country", "Argentina"], ["price", "70.0"], ["description", "Simply the best"], ["created_at", "2023-06-12 17:02:27.538373"], ["updated_at", "2023-06-12 17:02:27.538373"]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a1332686-ec31-48bf-b390-cde29964fa38]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a1332686-ec31-48bf-b390-cde29964fa38] Performing ActiveStorage::AnalyzeJob (Job ID: a1332686-ec31-48bf-b390-cde29964fa38) from Async(default) enqueued at 2023-06-12T17:02:27Z with arguments: #<GlobalID:0x00000001159ad010 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a1332686-ec31-48bf-b390-cde29964fa38] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a1332686-ec31-48bf-b390-cde29964fa38]   [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a1332686-ec31-48bf-b390-cde29964fa38]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 3]]
+  [1m[36mTRANSACTION (77.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "29tp6tbsf3iap4v44s3lrtmon0hn"], ["filename", "mason.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 160202], ["checksum", "zpF/ChDqtUBa3wznvIhsoA=="], ["created_at", "2023-06-12 17:02:27.714839"]]
+  [1m[36mActiveStorage::Attachment Create (69.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Laborer"], ["record_id", 4], ["blob_id", 4], ["created_at", "2023-06-12 17:02:27.717882"]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a1332686-ec31-48bf-b390-cde29964fa38]   [1m[36mTRANSACTION (153.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a1332686-ec31-48bf-b390-cde29964fa38] Performed ActiveStorage::AnalyzeJob (Job ID: a1332686-ec31-48bf-b390-cde29964fa38) from Async(default) in 228.92ms
+  [1m[36mLaborer Update (2.8ms)[0m  [1m[33mUPDATE "laborers" SET "updated_at" = $1 WHERE "laborers"."id" = $2[0m  [["updated_at", "2023-06-12 17:02:27.790223"], ["id", 4]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (48.8ms) [0m[32mUploaded file to key: 29tp6tbsf3iap4v44s3lrtmon0hn (checksum: zpF/ChDqtUBa3wznvIhsoA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 6bc68ff3-29dd-4a37-8dbd-62d43c2e8697) to Async(default) with arguments: #<GlobalID:0x00000001155cb500 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/4>>
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLaborer Create (0.7ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Gubber"], ["skill", "plumber"], ["city", "Valparaiso"], ["country", "Chile"], ["price", "95.0"], ["description", "Simply the best"], ["created_at", "2023-06-12 17:02:27.853266"], ["updated_at", "2023-06-12 17:02:27.853266"]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6bc68ff3-29dd-4a37-8dbd-62d43c2e8697]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6bc68ff3-29dd-4a37-8dbd-62d43c2e8697] Performing ActiveStorage::AnalyzeJob (Job ID: 6bc68ff3-29dd-4a37-8dbd-62d43c2e8697) from Async(default) enqueued at 2023-06-12T17:02:27Z with arguments: #<GlobalID:0x00000001157628f0 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6bc68ff3-29dd-4a37-8dbd-62d43c2e8697] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6bc68ff3-29dd-4a37-8dbd-62d43c2e8697]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6bc68ff3-29dd-4a37-8dbd-62d43c2e8697]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+  [1m[36mTRANSACTION (34.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6bc68ff3-29dd-4a37-8dbd-62d43c2e8697]   [1m[36mTRANSACTION (37.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6bc68ff3-29dd-4a37-8dbd-62d43c2e8697] Performed ActiveStorage::AnalyzeJob (Job ID: 6bc68ff3-29dd-4a37-8dbd-62d43c2e8697) from Async(default) in 47.1ms
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "dn0f6xmln3q1zlcsk7suflnt4txt"], ["filename", "plumber.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 58542], ["checksum", "9E5coiXvYIf+NSL4csHwbQ=="], ["created_at", "2023-06-12 17:02:27.954549"]]
+  [1m[36mActiveStorage::Attachment Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Laborer"], ["record_id", 5], ["blob_id", 5], ["created_at", "2023-06-12 17:02:27.957557"]]
+  [1m[36mLaborer Update (0.3ms)[0m  [1m[33mUPDATE "laborers" SET "updated_at" = $1 WHERE "laborers"."id" = $2[0m  [["updated_at", "2023-06-12 17:02:27.960780"], ["id", 5]]
+  [1m[36mTRANSACTION (39.2ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (4.4ms) [0m[32mUploaded file to key: dn0f6xmln3q1zlcsk7suflnt4txt (checksum: 9E5coiXvYIf+NSL4csHwbQ==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: fb494315-cd63-48e4-9da4-6b0e77cfe46b) to Async(default) with arguments: #<GlobalID:0x00000001159c4f08 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fb494315-cd63-48e4-9da4-6b0e77cfe46b]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fb494315-cd63-48e4-9da4-6b0e77cfe46b] Performing ActiveStorage::AnalyzeJob (Job ID: fb494315-cd63-48e4-9da4-6b0e77cfe46b) from Async(default) enqueued at 2023-06-12T17:02:28Z with arguments: #<GlobalID:0x0000000115ad6478 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fb494315-cd63-48e4-9da4-6b0e77cfe46b] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fb494315-cd63-48e4-9da4-6b0e77cfe46b]   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fb494315-cd63-48e4-9da4-6b0e77cfe46b]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fb494315-cd63-48e4-9da4-6b0e77cfe46b]   [1m[36mTRANSACTION (5.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [fb494315-cd63-48e4-9da4-6b0e77cfe46b] Performed ActiveStorage::AnalyzeJob (Job ID: fb494315-cd63-48e4-9da4-6b0e77cfe46b) from Async(default) in 17.95ms
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.3ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReservation Create (1.1ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2022-08-07"], ["number_days", 7], ["cost", nil], ["created_at", "2023-06-12 17:02:28.185347"], ["updated_at", "2023-06-12 17:02:28.185347"], ["user_id", 1], ["laborer_id", 1]]
+  [1m[36mTRANSACTION (21.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.2ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Create (0.5ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2022-09-07"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-12 17:02:28.216953"], ["updated_at", "2023-06-12 17:02:28.216953"], ["user_id", 2], ["laborer_id", 2]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (56.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7245288471381514575)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (34.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7245288471381514575)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "GlumpPunk09"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (83.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "BillyBoy10"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLaborer Create (0.6ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Raul"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "110.0"], ["description", "Simply the best"], ["created_at", "2023-06-12 17:06:26.196835"], ["updated_at", "2023-06-12 17:06:26.196835"]]
+  [1m[36mTRANSACTION (24.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "lj1hraj41lmo5ve6nu2drp938njw"], ["filename", "carpenter.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 30589], ["checksum", "N6bWHeqkCgDaToDhbRHAXg=="], ["created_at", "2023-06-12 17:06:26.457653"]]
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Laborer"], ["record_id", 6], ["blob_id", 6], ["created_at", "2023-06-12 17:06:26.481978"]]
+  [1m[36mLaborer Update (0.5ms)[0m  [1m[33mUPDATE "laborers" SET "updated_at" = $1 WHERE "laborers"."id" = $2[0m  [["updated_at", "2023-06-12 17:06:26.484386"], ["id", 6]]
+  [1m[36mTRANSACTION (27.6ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (39.3ms) [0m[32mUploaded file to key: lj1hraj41lmo5ve6nu2drp938njw (checksum: N6bWHeqkCgDaToDhbRHAXg==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: c8cac2dd-adf1-4f43-aacb-142017d51101) to Async(default) with arguments: #<GlobalID:0x0000000113f043f8 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/6>>
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLaborer Create (0.8ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Gubber"], ["skill", "electrician"], ["city", "San Diego"], ["country", "USA"], ["price", "90.0"], ["description", "Simply the best"], ["created_at", "2023-06-12 17:06:26.585102"], ["updated_at", "2023-06-12 17:06:26.585102"]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c8cac2dd-adf1-4f43-aacb-142017d51101]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c8cac2dd-adf1-4f43-aacb-142017d51101] Performing ActiveStorage::AnalyzeJob (Job ID: c8cac2dd-adf1-4f43-aacb-142017d51101) from Async(default) enqueued at 2023-06-12T17:06:26Z with arguments: #<GlobalID:0x0000000113f8c460 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/6>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c8cac2dd-adf1-4f43-aacb-142017d51101] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c8cac2dd-adf1-4f43-aacb-142017d51101]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (82.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c8cac2dd-adf1-4f43-aacb-142017d51101]   [1m[36mActiveStorage::Blob Update (1.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "281rmjjhzgum402izqzw2q7l42lx"], ["filename", "electrician.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 96545], ["checksum", "H/GYjiAfRJuiKdHhcmc8WA=="], ["created_at", "2023-06-12 17:06:26.710460"]]
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Laborer"], ["record_id", 7], ["blob_id", 7], ["created_at", "2023-06-12 17:06:26.712947"]]
+  [1m[36mLaborer Update (0.4ms)[0m  [1m[33mUPDATE "laborers" SET "updated_at" = $1 WHERE "laborers"."id" = $2[0m  [["updated_at", "2023-06-12 17:06:26.715036"], ["id", 7]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c8cac2dd-adf1-4f43-aacb-142017d51101]   [1m[36mTRANSACTION (77.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c8cac2dd-adf1-4f43-aacb-142017d51101] Performed ActiveStorage::AnalyzeJob (Job ID: c8cac2dd-adf1-4f43-aacb-142017d51101) from Async(default) in 160.38ms
+  [1m[36mTRANSACTION (36.4ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (1.6ms) [0m[32mUploaded file to key: 281rmjjhzgum402izqzw2q7l42lx (checksum: H/GYjiAfRJuiKdHhcmc8WA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: a70b5576-a28e-4d6a-ba7b-5b9d7dd92ba7) to Async(default) with arguments: #<GlobalID:0x00000001133f30b8 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/7>>
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLaborer Create (0.6ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Honey"], ["skill", "gardener"], ["city", "Lyon"], ["country", "France"], ["price", "80.0"], ["description", "Simply the best"], ["created_at", "2023-06-12 17:06:26.758044"], ["updated_at", "2023-06-12 17:06:26.758044"]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a70b5576-a28e-4d6a-ba7b-5b9d7dd92ba7]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a70b5576-a28e-4d6a-ba7b-5b9d7dd92ba7] Performing ActiveStorage::AnalyzeJob (Job ID: a70b5576-a28e-4d6a-ba7b-5b9d7dd92ba7) from Async(default) enqueued at 2023-06-12T17:06:26Z with arguments: #<GlobalID:0x0000000113490f98 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/7>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a70b5576-a28e-4d6a-ba7b-5b9d7dd92ba7] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a70b5576-a28e-4d6a-ba7b-5b9d7dd92ba7]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a70b5576-a28e-4d6a-ba7b-5b9d7dd92ba7]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 7]]
+  [1m[36mTRANSACTION (30.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a70b5576-a28e-4d6a-ba7b-5b9d7dd92ba7]   [1m[36mTRANSACTION (20.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a70b5576-a28e-4d6a-ba7b-5b9d7dd92ba7] Performed ActiveStorage::AnalyzeJob (Job ID: a70b5576-a28e-4d6a-ba7b-5b9d7dd92ba7) from Async(default) in 30.27ms
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "blqsegg8usd388xp9upci11lhckl"], ["filename", "gardener.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 257803], ["checksum", "1ShXJxfamkqj1RiI7Rm+bw=="], ["created_at", "2023-06-12 17:06:26.810476"]]
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Laborer"], ["record_id", 8], ["blob_id", 8], ["created_at", "2023-06-12 17:06:26.813032"]]
+  [1m[36mLaborer Update (0.3ms)[0m  [1m[33mUPDATE "laborers" SET "updated_at" = $1 WHERE "laborers"."id" = $2[0m  [["updated_at", "2023-06-12 17:06:26.815109"], ["id", 8]]
+  [1m[36mTRANSACTION (15.2ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (2.8ms) [0m[32mUploaded file to key: blqsegg8usd388xp9upci11lhckl (checksum: 1ShXJxfamkqj1RiI7Rm+bw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 92636236-2a56-4c33-a607-1473079044cc) to Async(default) with arguments: #<GlobalID:0x000000011395d8f0 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/8>>
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLaborer Create (0.5ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Doofus"], ["skill", "mason"], ["city", "Cordoba"], ["country", "Argentina"], ["price", "70.0"], ["description", "Simply the best"], ["created_at", "2023-06-12 17:06:26.837598"], ["updated_at", "2023-06-12 17:06:26.837598"]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [92636236-2a56-4c33-a607-1473079044cc]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [92636236-2a56-4c33-a607-1473079044cc] Performing ActiveStorage::AnalyzeJob (Job ID: 92636236-2a56-4c33-a607-1473079044cc) from Async(default) enqueued at 2023-06-12T17:06:26Z with arguments: #<GlobalID:0x0000000113a56a18 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/8>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [92636236-2a56-4c33-a607-1473079044cc] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [92636236-2a56-4c33-a607-1473079044cc]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [92636236-2a56-4c33-a607-1473079044cc]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 8]]
+  [1m[36mTRANSACTION (33.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [92636236-2a56-4c33-a607-1473079044cc]   [1m[36mTRANSACTION (22.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [92636236-2a56-4c33-a607-1473079044cc] Performed ActiveStorage::AnalyzeJob (Job ID: 92636236-2a56-4c33-a607-1473079044cc) from Async(default) in 32.74ms
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "r1lq4zlb7c6egs2wgzst7c88qr2q"], ["filename", "mason.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 160202], ["checksum", "zpF/ChDqtUBa3wznvIhsoA=="], ["created_at", "2023-06-12 17:06:26.885086"]]
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Laborer"], ["record_id", 9], ["blob_id", 9], ["created_at", "2023-06-12 17:06:26.887554"]]
+  [1m[36mLaborer Update (0.3ms)[0m  [1m[33mUPDATE "laborers" SET "updated_at" = $1 WHERE "laborers"."id" = $2[0m  [["updated_at", "2023-06-12 17:06:26.890471"], ["id", 9]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (1.7ms) [0m[32mUploaded file to key: r1lq4zlb7c6egs2wgzst7c88qr2q (checksum: zpF/ChDqtUBa3wznvIhsoA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 71ac94a9-6291-44da-b77c-9b9f350a2958) to Async(default) with arguments: #<GlobalID:0x0000000113bd42f0 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/9>>
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLaborer Create (0.7ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Gubber"], ["skill", "plumber"], ["city", "Valparaiso"], ["country", "Chile"], ["price", "95.0"], ["description", "Simply the best"], ["created_at", "2023-06-12 17:06:26.906903"], ["updated_at", "2023-06-12 17:06:26.906903"]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [71ac94a9-6291-44da-b77c-9b9f350a2958]   [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [71ac94a9-6291-44da-b77c-9b9f350a2958] Performing ActiveStorage::AnalyzeJob (Job ID: 71ac94a9-6291-44da-b77c-9b9f350a2958) from Async(default) enqueued at 2023-06-12T17:06:26Z with arguments: #<GlobalID:0x0000000113c0cab0 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/9>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [71ac94a9-6291-44da-b77c-9b9f350a2958] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [71ac94a9-6291-44da-b77c-9b9f350a2958]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [71ac94a9-6291-44da-b77c-9b9f350a2958]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 9]]
+  [1m[36mTRANSACTION (19.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [71ac94a9-6291-44da-b77c-9b9f350a2958]   [1m[36mTRANSACTION (7.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [71ac94a9-6291-44da-b77c-9b9f350a2958] Performed ActiveStorage::AnalyzeJob (Job ID: 71ac94a9-6291-44da-b77c-9b9f350a2958) from Async(default) in 18.19ms
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "20x8xx94nx5azawpkvru5ylzn1ud"], ["filename", "plumber.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 58542], ["checksum", "9E5coiXvYIf+NSL4csHwbQ=="], ["created_at", "2023-06-12 17:06:26.942743"]]
+  [1m[36mActiveStorage::Attachment Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "Laborer"], ["record_id", 10], ["blob_id", 10], ["created_at", "2023-06-12 17:06:26.945514"]]
+  [1m[36mLaborer Update (0.4ms)[0m  [1m[33mUPDATE "laborers" SET "updated_at" = $1 WHERE "laborers"."id" = $2[0m  [["updated_at", "2023-06-12 17:06:26.948896"], ["id", 10]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (1.1ms) [0m[32mUploaded file to key: 20x8xx94nx5azawpkvru5ylzn1ud (checksum: 9E5coiXvYIf+NSL4csHwbQ==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 58199882-c7b8-4f19-bfcb-83c78eaa1dca) to Async(default) with arguments: #<GlobalID:0x0000000113e0f6a0 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/10>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [58199882-c7b8-4f19-bfcb-83c78eaa1dca]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [58199882-c7b8-4f19-bfcb-83c78eaa1dca] Performing ActiveStorage::AnalyzeJob (Job ID: 58199882-c7b8-4f19-bfcb-83c78eaa1dca) from Async(default) enqueued at 2023-06-12T17:06:26Z with arguments: #<GlobalID:0x0000000113f27a88 @uri=#<URI::GID gid://jobforcash/ActiveStorage::Blob/10>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [58199882-c7b8-4f19-bfcb-83c78eaa1dca] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [58199882-c7b8-4f19-bfcb-83c78eaa1dca]   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [58199882-c7b8-4f19-bfcb-83c78eaa1dca]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 10]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.4ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [58199882-c7b8-4f19-bfcb-83c78eaa1dca]   [1m[36mTRANSACTION (41.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [58199882-c7b8-4f19-bfcb-83c78eaa1dca] Performed ActiveStorage::AnalyzeJob (Job ID: 58199882-c7b8-4f19-bfcb-83c78eaa1dca) from Async(default) in 54.3ms
+  [1m[36mReservation Create (1.4ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2022-08-07"], ["number_days", 7], ["cost", nil], ["created_at", "2023-06-12 17:06:27.038920"], ["updated_at", "2023-06-12 17:06:27.038920"], ["user_id", 1], ["laborer_id", 1]]
+  [1m[36mTRANSACTION (36.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.3ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReservation Create (0.5ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2022-09-07"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-12 17:06:27.085061"], ["updated_at", "2023-06-12 17:06:27.085061"], ["user_id", 2], ["laborer_id", 2]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/v1/reservations" for 127.0.0.1 at 2023-06-12 10:08:34 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by V1::ReservationsController#index as JSON
+  [1m[36mReservation Load (0.9ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  ↳ app/controllers/v1/reservations_controller.rb:3:in `index'
+Completed 200 OK in 346ms (Views: 17.8ms | ActiveRecord: 7.3ms | Allocations: 11316)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2023-06-12 10:09:30 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/v1/users"):
+  
+Started GET "/users" for 127.0.0.1 at 2023-06-12 10:09:54 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/v1/reservations" for 127.0.0.1 at 2023-06-12 10:10:10 -0700
+Processing by V1::ReservationsController#index as JSON
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  ↳ app/controllers/v1/reservations_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1127)
+
+
+Started GET "/v1/users" for 127.0.0.1 at 2023-06-12 10:10:17 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/v1/users"):
+  
+Started GET "/v1/users/1" for 127.0.0.1 at 2023-06-12 10:10:52 -0700
+Processing by V1::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/v1/users_controller.rb:3:in `show'
+Completed 200 OK in 130ms (Views: 0.2ms | ActiveRecord: 7.6ms | Allocations: 5074)
+
+
+Started GET "/v1/laborers" for 127.0.0.1 at 2023-06-12 10:11:03 -0700
+Processing by V1::LaborersController#index as JSON
+  [1m[36mLaborer Load (1.6ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers"[0m
+  ↳ app/controllers/v1/laborers_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Attachment Load (2.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 22.2ms | Allocations: 26993)
+
+
+  
+ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+  
+app/models/laborer.rb:13:in `image_url'
+app/controllers/v1/laborers_controller.rb:5:in `index'
+Started GET "/v1/laborers" for 127.0.0.1 at 2023-06-12 10:15:48 -0700
+Processing by V1::LaborersController#index as JSON
+  [1m[36mLaborer Load (0.5ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers"[0m
+  ↳ app/controllers/v1/laborers_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+Completed 500 Internal Server Error in 253ms (ActiveRecord: 17.5ms | Allocations: 17940)
+
+
+  
+ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+  
+app/models/laborer.rb:13:in `image_url'
+app/controllers/v1/laborers_controller.rb:5:in `index'
+Started GET "/v1/laborers" for 127.0.0.1 at 2023-06-12 10:16:36 -0700
+Processing by V1::LaborersController#index as JSON
+  [1m[36mLaborer Load (0.3ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers"[0m
+  ↳ app/controllers/v1/laborers_controller.rb:5:in `index'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Laborer"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/laborer.rb:13:in `image_url'
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 21.1ms | Allocations: 17842)
+
+
+  
+ArgumentError (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+  
+app/models/laborer.rb:13:in `image_url'
+app/controllers/v1/laborers_controller.rb:5:in `index'
