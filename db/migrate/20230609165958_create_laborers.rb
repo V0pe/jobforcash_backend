@@ -6,6 +6,7 @@ class CreateLaborers < ActiveRecord::Migration[7.0]
       t.string :city
       t.string :country
       t.decimal :price
+      t.text :description
 
       t.timestamps
     end
