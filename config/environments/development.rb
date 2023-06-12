@@ -1,5 +1,5 @@
 require "active_support/core_ext/integer/time"
-Rails.application.routes.default_url_options[:host] = 'localhost:3000'
+Rails.application.routes.default_url_options[:host] = 'localhost:3001'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -39,7 +39,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3001 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
