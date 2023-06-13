@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-user_1 = User.create(username: 'GlumpPunk09')
-user_2 = User.create(username: 'BillyBoy10')
+user_1 = User.create(username: 'GlumpPunk09', email: 'glmpnk@gmail.com', password: 'glmpnk123')
+user_2 = User.create(username: 'BillyBoy10', email: 'bilby@hotmail.com', password: 'bilby123')
 
 laborer_1 = Laborer.create(name: 'Raul', skill: 'carpenter', description: "Simply the best", country: 'Mexico', city: 'Tijuana', price: 110.0)
 laborer_1.image.attach(io: File.open("app/assets/images/carpenter.jpeg"), filename: "carpenter.jpeg")
