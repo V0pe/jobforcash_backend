@@ -1,23 +1,25 @@
 class V1::LaborersController < ApplicationController
   def index
-    render json: Laborer.all.to_json
+    @laborer = Laborer.all
+
+    render json: LaborerSerializer.new(@laborer).serializable_hash[:data], status: :ok
   end
 
   def show
-    laborer = Laborer.find_by(id: params[:id])
+    @laborer = Laborer.find_by(id: params[:id])
 
-    if laborer.nil?
+    if @laborer.nil?
       render status: 404, json: { error: 'Laborer not found' }.to_json
     else
-      render json: laborer.to_json
+      render json: LaborerSerializer.new(@laborer).serializable_hash[:data][:attributes], status: :ok
     end
   end
 
   def create
-    laborer = Laborer.new(laborer_params)
+    @laborer = Laborer.new(laborer_params)
 
-    if laborer.save
-      render json: laborer.to_json
+    if @laborer.save
+      render json: LaborerSerializer.new(@laborer).serializable_hash[:data][:attributes], status: :created
     else
       render status: 500, json: { error: 'Laborer could not be created' }.to_json
     end
@@ -37,6 +39,6 @@ class V1::LaborersController < ApplicationController
   private
 
   def laborer_params
-    params.require(:laborer).permit(:name, :skill, :description, :country, :city, :price)
+    params.permit(:name, :skill, :description, :country, :city, :price, :image)
   end
 end
