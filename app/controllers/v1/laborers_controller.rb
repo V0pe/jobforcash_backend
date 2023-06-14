@@ -1,4 +1,6 @@
 class V1::LaborersController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @laborer = Laborer.all
 
