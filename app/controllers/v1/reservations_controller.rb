@@ -2,7 +2,7 @@ class V1::ReservationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    reservations = Reservation.all.to_json
+    reservations = current_user.reservations
 
     render json: ReservationSerializer.new(reservations).serializable_hash[:data], status: :ok
   end
