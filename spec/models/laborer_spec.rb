@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Laborer, type: :model do
   describe 'validations' do
     before(:each) do
-      @laborer = Laborer.create(name: 'Wimpy', skill: 'carpenter', description: 'Awesome at what I do', country: 'Mexico', city: 'Tijuana', price: 100)
+      @laborer = Laborer.create(name: 'Wimpy', skill: 'carpenter', description: 'Awesome at what I do',
+                                country: 'Mexico', city: 'Tijuana', price: 100)
     end
     it 'should be valid' do
       expect(@laborer).to be_valid

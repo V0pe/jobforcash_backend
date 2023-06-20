@@ -5,7 +5,7 @@ class Reservation < ApplicationRecord
   validates :start_date, presence: true
   validates :number_days, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 30 }
   validate :valid_date
- 
+
   private
 
   def valid_date

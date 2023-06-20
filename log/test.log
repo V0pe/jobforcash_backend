@@ -2104,3 +2104,353 @@
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "Wimpy"], ["id", 132], ["LIMIT", 1]]
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (54.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (33.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (80.5ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:29:58.666982"], ["updated_at", "2023-06-20 18:29:58.666982"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.3ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:29:59.013964"], ["updated_at", "2023-06-20 18:29:59.013964"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.3ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:29:59.019585"], ["updated_at", "2023-06-20 18:29:59.019585"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.4ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:29:59.024938"], ["updated_at", "2023-06-20 18:29:59.024938"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.3ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:29:59.029181"], ["updated_at", "2023-06-20 18:29:59.029181"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.3ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:29:59.031912"], ["updated_at", "2023-06-20 18:29:59.031912"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (1.4ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:29:59.036994"], ["updated_at", "2023-06-20 18:29:59.036994"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Jones"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Jones"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:29:59.292392"], ["updated_at", "2023-06-20 18:29:59.292392"], ["email", "jones@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "9afb54e8-cfd1-4d19-bf24-5a2a067ad63f"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.5ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:29:59.296404"], ["updated_at", "2023-06-20 18:29:59.296404"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 133], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.4ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 185], ["LIMIT", 1]]
+  [1m[36mReservation Create (1.1ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2025-01-01"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-20 18:29:59.419359"], ["updated_at", "2023-06-20 18:29:59.419359"], ["user_id", 133], ["laborer_id", 185]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Jones"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Jones"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:29:59.428089"], ["updated_at", "2023-06-20 18:29:59.428089"], ["email", "jones@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "07b25c29-79bd-4ab4-bbcb-1e0f78485ac7"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.2ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:29:59.429869"], ["updated_at", "2023-06-20 18:29:59.429869"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 134], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.3ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 186], ["LIMIT", 1]]
+  [1m[36mReservation Create (0.5ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2025-01-01"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-20 18:29:59.433889"], ["updated_at", "2023-06-20 18:29:59.433889"], ["user_id", 134], ["laborer_id", 186]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "William"], ["id", 134], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Jones"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Jones"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:29:59.444459"], ["updated_at", "2023-06-20 18:29:59.444459"], ["email", "jones@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "ebb2e539-5bd5-4eae-805d-48c437d66ac7"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.4ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:29:59.447940"], ["updated_at", "2023-06-20 18:29:59.447940"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 135], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.4ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 187], ["LIMIT", 1]]
+  [1m[36mReservation Create (0.8ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2025-01-01"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-20 18:29:59.454766"], ["updated_at", "2023-06-20 18:29:59.454766"], ["user_id", 135], ["laborer_id", 187]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (30.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Jones"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Jones"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:29:59.497203"], ["updated_at", "2023-06-20 18:29:59.497203"], ["email", "jones@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "7449fa3d-4ccd-4a41-8b95-057326153859"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.5ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:29:59.499257"], ["updated_at", "2023-06-20 18:29:59.499257"]]
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.4ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 188], ["LIMIT", 1]]
+  [1m[36mReservation Create (0.8ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2025-01-01"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-20 18:29:59.515914"], ["updated_at", "2023-06-20 18:29:59.515914"], ["user_id", 136], ["laborer_id", 188]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Jones"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Jones"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:29:59.528001"], ["updated_at", "2023-06-20 18:29:59.528001"], ["email", "jones@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "b0e36b9d-f730-4b76-889f-69eaaf4a258e"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.3ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:29:59.530046"], ["updated_at", "2023-06-20 18:29:59.530046"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 137], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.3ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 189], ["LIMIT", 1]]
+  [1m[36mReservation Create (0.7ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2025-01-01"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-20 18:29:59.535555"], ["updated_at", "2023-06-20 18:29:59.535555"], ["user_id", 137], ["laborer_id", 189]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Jones"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Jones"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:29:59.543128"], ["updated_at", "2023-06-20 18:29:59.543128"], ["email", "jones@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "7d416a82-5410-4a40-b6f7-5bfdaff57db1"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.3ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:29:59.545933"], ["updated_at", "2023-06-20 18:29:59.545933"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.3ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 190], ["LIMIT", 1]]
+  [1m[36mReservation Create (0.6ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2025-01-01"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-20 18:29:59.550996"], ["updated_at", "2023-06-20 18:29:59.550996"], ["user_id", 138], ["laborer_id", 190]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Jones"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Jones"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:29:59.558994"], ["updated_at", "2023-06-20 18:29:59.558994"], ["email", "jones@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "30e7fd93-a2d9-4031-a13b-2c69af0b5c47"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.3ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:29:59.560951"], ["updated_at", "2023-06-20 18:29:59.560951"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 139], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.2ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 191], ["LIMIT", 1]]
+  [1m[36mReservation Create (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2025-01-01"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-20 18:29:59.564708"], ["updated_at", "2023-06-20 18:29:59.564708"], ["user_id", 139], ["laborer_id", 191]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "wimpy@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Wimpy"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Wimpy"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:29:59.572831"], ["updated_at", "2023-06-20 18:29:59.572831"], ["email", "wimpy@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "07bbbbf0-6d26-4f03-a540-ef91e3f30578"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "Wimpy"], ["id", 140], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "wimpy@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Wimpy"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Wimpy"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:29:59.582140"], ["updated_at", "2023-06-20 18:29:59.582140"], ["email", "wimpy@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "dc0f90f8-71bc-4f71-bb59-a27a47507958"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "Larry"], ["id", 141], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "wimpy@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Wimpy"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Wimpy"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:29:59.590436"], ["updated_at", "2023-06-20 18:29:59.590436"], ["email", "wimpy@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "a22e3caa-2eba-4fb6-bee2-4427691e53b0"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "Wimpy"], ["id", 142], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "wimpy@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Wimpy"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Wimpy"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:29:59.599027"], ["updated_at", "2023-06-20 18:29:59.599027"], ["email", "wimpy@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "0fee04d3-4289-49e5-9958-31ea343fc0de"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "Wimpy"], ["id", 143], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.8ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:57:09.991988"], ["updated_at", "2023-06-20 18:57:09.991988"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.2ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:57:10.182447"], ["updated_at", "2023-06-20 18:57:10.182447"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.2ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:57:10.185422"], ["updated_at", "2023-06-20 18:57:10.185422"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.2ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:57:10.188368"], ["updated_at", "2023-06-20 18:57:10.188368"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.2ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:57:10.191199"], ["updated_at", "2023-06-20 18:57:10.191199"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.3ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:57:10.193877"], ["updated_at", "2023-06-20 18:57:10.193877"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.4ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:57:10.196670"], ["updated_at", "2023-06-20 18:57:10.196670"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Jones"], ["LIMIT", 1]]
+  [1m[36mUser Create (25.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Jones"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:57:10.290824"], ["updated_at", "2023-06-20 18:57:10.290824"], ["email", "jones@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "38d754e8-6ccd-4418-8c5e-5d4cd691a4fa"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.3ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:57:10.318087"], ["updated_at", "2023-06-20 18:57:10.318087"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 144], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.4ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+  [1m[36mReservation Create (0.9ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2025-01-01"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-20 18:57:10.476837"], ["updated_at", "2023-06-20 18:57:10.476837"], ["user_id", 144], ["laborer_id", 199]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Jones"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Jones"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:57:10.485863"], ["updated_at", "2023-06-20 18:57:10.485863"], ["email", "jones@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "38aa9bbf-6270-4a3c-b00a-8a9c0694b915"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.2ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:57:10.487466"], ["updated_at", "2023-06-20 18:57:10.487466"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.2ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 200], ["LIMIT", 1]]
+  [1m[36mReservation Create (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2025-01-01"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-20 18:57:10.491305"], ["updated_at", "2023-06-20 18:57:10.491305"], ["user_id", 145], ["laborer_id", 200]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "William"], ["id", 145], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Jones"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Jones"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:57:10.498202"], ["updated_at", "2023-06-20 18:57:10.498202"], ["email", "jones@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "fe70e0f5-3431-4409-be82-06ac61de4b39"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.2ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:57:10.499690"], ["updated_at", "2023-06-20 18:57:10.499690"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 146], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.3ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 201], ["LIMIT", 1]]
+  [1m[36mReservation Create (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2025-01-01"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-20 18:57:10.503506"], ["updated_at", "2023-06-20 18:57:10.503506"], ["user_id", 146], ["laborer_id", 201]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Jones"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Jones"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:57:10.509450"], ["updated_at", "2023-06-20 18:57:10.509450"], ["email", "jones@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "5b29382a-c32f-4089-9183-68575602acb1"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.2ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:57:10.511460"], ["updated_at", "2023-06-20 18:57:10.511460"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 147], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.2ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 202], ["LIMIT", 1]]
+  [1m[36mReservation Create (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2025-01-01"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-20 18:57:10.514848"], ["updated_at", "2023-06-20 18:57:10.514848"], ["user_id", 147], ["laborer_id", 202]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Jones"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Jones"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:57:10.521627"], ["updated_at", "2023-06-20 18:57:10.521627"], ["email", "jones@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "5d0fd5c9-9040-4617-80ef-990030a64e06"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.2ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:57:10.523165"], ["updated_at", "2023-06-20 18:57:10.523165"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 148], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.7ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 203], ["LIMIT", 1]]
+  [1m[36mReservation Create (0.5ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2025-01-01"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-20 18:57:10.528066"], ["updated_at", "2023-06-20 18:57:10.528066"], ["user_id", 148], ["laborer_id", 203]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Jones"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Jones"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:57:10.534275"], ["updated_at", "2023-06-20 18:57:10.534275"], ["email", "jones@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "ea4ee75b-7cfa-4843-87df-8e7c62fe94ca"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.2ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:57:10.535757"], ["updated_at", "2023-06-20 18:57:10.535757"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 149], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.2ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 204], ["LIMIT", 1]]
+  [1m[36mReservation Create (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2025-01-01"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-20 18:57:10.539137"], ["updated_at", "2023-06-20 18:57:10.539137"], ["user_id", 149], ["laborer_id", 204]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jones@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Jones"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Jones"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:57:10.545396"], ["updated_at", "2023-06-20 18:57:10.545396"], ["email", "jones@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "adfdff4c-e3f2-4fe8-b894-fed33deafbf9"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLaborer Create (0.2ms)[0m  [1m[32mINSERT INTO "laborers" ("name", "skill", "city", "country", "price", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Wimpy"], ["skill", "carpenter"], ["city", "Tijuana"], ["country", "Mexico"], ["price", "100.0"], ["description", "Awesome at what I do"], ["created_at", "2023-06-20 18:57:10.546896"], ["updated_at", "2023-06-20 18:57:10.546896"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 150], ["LIMIT", 1]]
+  [1m[36mLaborer Load (0.2ms)[0m  [1m[34mSELECT "laborers".* FROM "laborers" WHERE "laborers"."id" = $1 LIMIT $2[0m  [["id", 205], ["LIMIT", 1]]
+  [1m[36mReservation Create (0.3ms)[0m  [1m[32mINSERT INTO "reservations" ("start_date", "number_days", "cost", "created_at", "updated_at", "user_id", "laborer_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["start_date", "2025-01-01"], ["number_days", 5], ["cost", nil], ["created_at", "2023-06-20 18:57:10.550494"], ["updated_at", "2023-06-20 18:57:10.550494"], ["user_id", 150], ["laborer_id", 205]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "wimpy@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Wimpy"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Wimpy"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:57:10.557044"], ["updated_at", "2023-06-20 18:57:10.557044"], ["email", "wimpy@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "468be8e3-887d-494c-8f22-8f82520783be"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "Wimpy"], ["id", 151], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "wimpy@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Wimpy"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Wimpy"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:57:10.564465"], ["updated_at", "2023-06-20 18:57:10.564465"], ["email", "wimpy@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "9bf39f1a-63ec-45e7-bf46-8d40eaf3345a"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "Larry"], ["id", 152], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "wimpy@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Wimpy"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Wimpy"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:57:10.571837"], ["updated_at", "2023-06-20 18:57:10.571837"], ["email", "wimpy@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "cead6beb-5e25-466b-b347-a8352687f1bd"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "Wimpy"], ["id", 153], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "wimpy@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) LIMIT $2[0m  [["username", "Wimpy"], ["LIMIT", 1]]
+  [1m[36mUser Create (59.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "jti") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["username", "Wimpy"], ["password", "[FILTERED]"], ["created_at", "2023-06-20 18:57:10.578968"], ["updated_at", "2023-06-20 18:57:10.578968"], ["email", "wimpy@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["jti", "f8747c53-cca5-47e2-9c6c-cc6d5ed21d45"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["username", "Wimpy"], ["id", 154], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
