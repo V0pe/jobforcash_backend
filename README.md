@@ -4,7 +4,7 @@
   <br/>
 
   <h3><b>Job for Cash</b></h3>
-    <img src="./src/assets/jfc-logo.png" alt="jobforcash-logo" width="30" height="30"/>
+    <img src="./app/assets/images/jfc-logo.png" alt="jobforcash-logo" width="30" height="30"/>
 
 </div>
 
