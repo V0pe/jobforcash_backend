@@ -120,6 +120,13 @@ Install this project with:
   bundle install
 ```
 
+### Database
+```sh
+   rails db:create
+   rails db:migrate
+   rails db:seed
+```
+
 ### Usage
 
 To run the project, execute the following command:
