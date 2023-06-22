@@ -14,7 +14,9 @@
 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
+    - [Kanban Board](#kanban-board)
     - [Tech Stack](#tech-stack)
+    - [Frontend Application](#front-end)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
@@ -39,6 +41,16 @@
 **[Jobforcash]** is a services application that keeps track of all nearby laborers for hire.
 
 ## 🛠 Built With <a name="built-with"></a>
+
+### Kanbanboard <a name="kanban-board"></a>
+- [Kanban Board Link](https://github.com/users/V0pe/projects/3)
+- Before Project start
+- ![image](https://github.com/V0pe/jobforcash_backend/assets/61356487/275200bc-b569-448d-83e6-b48646cb2bcb)
+- After and almost end of project
+- ![image](https://github.com/V0pe/jobforcash_backend/assets/61356487/7e3e803b-038e-49c2-9e4f-1069692ec8dd)
+
+- ### Frontend Appilcation link <a name="front-end"></a>
+[Frontend Link](https://github.com/v0pe/jobforcash_frontend) 
 
 ### Tech Stack <a name="tech-stack"></a>
 
